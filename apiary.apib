@@ -1,0 +1,37 @@
+FORMAT: 1A
+HOST: http://apiplatformcloudse-celcomapiplatform-ehiyenx5.srv.ravcloud.com:8001/FaceRecogCreate
+
+# FACE - INSERT RECORD
+These APIs uses the facial image of an individual for alternate authentication in banking applications.
+
+## INSERT FACE RECORD [/]
+
+For face record Insertion the face image is given as binary input in the body, 
+along with some non nullable inputs in the header viz: TEAM_ID , ACCOUNT_NO , NAME 
+and MIME_TYPE. The captured data is stored in database. The account number 
+should be of 11 digits. The face image input should be an image type, the format
+of which should be mentioned in MIME type. If details are captured and stored in 
+database successfully, a response success status should be generated. 
+If error occurs then appropriate error message will be generated. 
+
+
+### Insert [POST]
+
++ Request (multipart/form-data)
+    + Headers
+
+            api-key: ''
+            TEAM_ID: ''
+            ACCOUNT_NO: ''
+            NAME : ''
+            MIME_TYPE: ''
+            AADHAAR_NO: ''
+            ENCODING: ''
+            IMG_SIZE: ''
+            I_DATE: ''
+            
++ Response 200 (application/json)
+
+        {
+            "RESPONSE_STATUS": "success"
+        }
